@@ -10,10 +10,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Database initialization
-with app.app_context():
-    db.create_all()
-    
 # Models
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -28,6 +24,11 @@ class OrderHistory(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'), nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
+# Database initialization/Create tables before the app runs
+with app.app_context():
+    db.create_all()
+    
+    
 # Routes
 @app.route('/')
 def index():
