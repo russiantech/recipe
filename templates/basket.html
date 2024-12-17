@@ -1,0 +1,98 @@
+{% extends "base.html" %} 
+
+{% block title %} . {% endblock title %}
+
+{% block content %}
+		<!-- Header -->
+		<header class="header header-fixed border-bottom">
+			<div class="header-content">
+				<div class="left-content">
+					<div class="dz-head-items">
+						<h5 class="title mb-0">My Cart</h5>
+						<ul class="dz-meta">
+							<li class="dz-item"><b>8</b> items</li>
+							<li class="dz-item">Deliver to: <b>London</b></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mid-content"></div>
+				<div class="right-content">
+					<a href="add-delivery-address.html" class="icon btn btn-outline-primary btn-sm gap-1 p-2 rounded-xl">
+						<i class="icon feather icon-map-pin"></i>
+						<span>Change</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<!-- Header -->
+
+<!-- Main Content Start -->
+<main class="page-content space-top p-b40">
+	<div class="container pt-0">
+		<div class="dz-total-area bg-white">
+			<ul class="total-prize">
+				<li class="name">Subtotal</li>
+				<li class="prize">$3,599</li>
+			</ul>
+			<div class="dz-text"><i class="feather icon-check"></i>Your order is eligible for free Delivery</div>
+		</div>
+		<div class="dz-flex-box p-b100">
+			<div class="dz-cart-list">
+				<div class="dz-media">
+					<img src="static/images/products/product1.jpg" alt="">
+				</div>
+				<div class="dz-content">
+					<h6 class="title"><a href="product-detail.html">Hot Creamy Cappuccino Latte Ombe</a></h6>
+					<ul class="dz-meta">
+						<li class="dz-price">$8.9<del>$9.5</del></li>
+						<li class="dz-review"><i class="feather icon-star-on"></i><span>(2k Review)</span></li>
+					</ul>
+					<div class=" d-flex align-items-center">
+						<div class="dz-stepper style-2">
+							<div class="input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input readonly="" class="stepper form-control" type="text" value="1" name="demo3"><span class="input-group-btn input-group-append"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span></div>
+						</div>
+						<a href="javascript:void(0);" class="dz-remove ms-auto"><i class="feather icon-trash-2"></i>Remove</a>
+					</div>
+				</div>
+			</div>
+			<div class="dz-cart-list">
+				<div class="dz-media">
+					<img src="static/images/products/product2.jpg" alt="">
+				</div>
+				<div class="dz-content">
+					<h6 class="title"><a href="product-detail.html">Creamy Mocha Ome Coffee </a></h6>
+					<ul class="dz-meta">
+						<li class="dz-price">$6.3<del>$8.5</del></li>
+						<li class="dz-review"><i class="feather icon-star-on"></i><span>(2k Review)</span></li>
+					</ul>
+					<div class=" d-flex align-items-center">
+						<div class="dz-stepper style-2">
+							<div class="input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input readonly="" class="stepper form-control" type="text" value="1" name="demo3"><span class="input-group-btn input-group-append"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span></div>
+						</div>
+						<a href="javascript:void(0);" class="dz-remove ms-auto"><i class="feather icon-trash-2"></i>Remove</a>
+					</div>
+				</div>
+			</div>
+			<div class="dz-cart-list">
+				<div class="dz-media">
+					<img src="static/images/products/product3.jpg" alt="">
+				</div>
+				<div class="dz-content">
+					<h6 class="title"><a href="product-detail.html">Ice Chocolate Coffee</a></h6>
+					<ul class="dz-meta">
+						<li class="dz-price">$6.2<del>$9.5</del></li>
+						<li class="dz-review"><i class="feather icon-star-on"></i><span>(2k Review)</span></li>
+					</ul>
+					<div class=" d-flex align-items-center">
+						<div class="dz-stepper style-2">
+							<div class="input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input readonly="" class="stepper form-control" type="text" value="1" name="demo3"><span class="input-group-btn input-group-append"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span></div>
+						</div>
+						<a href="javascript:void(0);" class="dz-remove ms-auto"><i class="feather icon-trash-2"></i>Remove</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- Main Content End -->
+{% endblock content %}
