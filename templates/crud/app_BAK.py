@@ -1,19 +1,16 @@
-
-
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 from functools import wraps
 
-# Flask app setup
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
+app.secret_key = 'your_secret_key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Models
 # Models
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,53 +51,11 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-# Database initialization/Create tables before the app runs
-with app.app_context():
-    db.create_all()
-
 # Routes
 @app.route('/')
 def index():
     recipes = Recipe.query.all()
     return render_template('index.html', recipes=recipes)
-
-@app.route('/wish-list')
-def wish():  
-    return render_template('wish.html')
-
-@app.route('/basket')
-def basket():  
-    return render_template('basket.html')
-
-@app.route('/user')
-def user():  
-    return render_template('user.html')
-
-@app.route('/order')
-def order():  
-    return render_template('order.html')
-
-@app.route('/products')
-def products():  
-    return render_template('products.html')
-
-@app.route('/recipe', methods=['POST'])
-def recipe():  
-
-    data = request.form
-    new_recipe = Recipe(
-        name=data['title'], 
-                        ingredients=data['ingredients'], 
-                        steps=data['steps'])
-    db.session.add(new_recipe)
-    db.session.commit()
-    # return jsonify({"message": "Recipe added successfully!"})
-        
-    return render_template('crud/save_recipe.html', message="Recipe added successfully!")
-
-
-# =================================================
-
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -146,7 +101,7 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('login'))
 
-@app.route('/recipes', methods=['GET', 'POST'])
+@app.route('/recipes/new', methods=['GET', 'POST'])
 @login_required
 def new_recipe():
     if request.method == 'POST':
@@ -184,6 +139,7 @@ def delete_recipe(id):
     flash('Recipe deleted successfully!', 'success')
     return redirect(url_for('index'))
 
-
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

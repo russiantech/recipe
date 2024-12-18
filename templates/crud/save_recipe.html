@@ -39,158 +39,36 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Classic Input</h5>
+                        <h5 class="card-title">Recipe Details</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-2">
-                            <input type="text" class="form-control" placeholder="Enter Username">								
+                            <input type="text" name="title" class="form-control" placeholder="Recipe title.">								
                         </div>
                         <div class="mb-2">
-                            <input type="email" class="form-control" placeholder="Enter Email">
+                            <input type="number" name="price" class="form-control" placeholder="Recipe price.">
                         </div>
+                        
                         <div class="mb-2 input-group input-group-icon">
-                            <input type="password" id="password" class="form-control dz-password" placeholder="Type Password Here">
+                            <input type="file" id="image" name="image" class="form-control dz-password">
                             <span class="input-group-text show-pass"> 
-                                <i class="icon feather icon-eye-off eye-close"></i>
-                                <i class="icon feather icon-eye eye-open"></i>
+                                <i class="icon feather icon-feather"></i>
                             </span>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Input With Icon</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-2 input-group input-group-icon">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-user"></i>
-                                </div>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Enter Username">								
+                        
+                        <div class="mb-4 input-group">
+                            <button type="submit" 
+                            class="btn btn-primary btn-lg rounded-xl btn-thin w-100 gap-2">
+                                Save Recipe
+                            </button>
                         </div>
-                        <div class="mb-2 input-group input-group-icon">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-mail"></i>
-                                </div>
-                            </span>
-                            <input type="email" class="form-control" placeholder="Enter Email">
-                        </div>
-                        <div class="mb-2 input-group input-group-icon">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-lock"></i>
-                                </div>
-                            </span>
-                            <input type="password" id="password" class="form-control dz-password" placeholder="Type Password Here">
-                            <span class="input-group-text show-pass"> 
-                                <i class="icon feather icon-eye-off eye-close"></i>
-                                <i class="icon feather icon-eye eye-open"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Input With different sizes</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-2 input-lg">
-                            <input type="text" class="form-control" placeholder="Enter Username">								
-                        </div>
-                        <div class="mb-2">
-                            <input type="email" class="form-control" placeholder="Enter Email">
-                        </div>
-                        <div class="mb-2 input-group input-group-icon input-sm">
-                            <input type="password" id="password" class="form-control dz-password" placeholder="Type Password Here">
-                            <span class="input-group-text show-pass"> 
-                                <i class="icon feather icon-eye-off eye-close"></i>
-                                <i class="icon feather icon-eye eye-open"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Rounded Input</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-2 input-rounded">
-                            <input type="text" class="form-control" placeholder="Enter Username">								
-                        </div>
-                        <div class="mb-2 input-rounded">
-                            <input type="email" class="form-control" placeholder="Enter Email">
-                        </div>
-                        <div class="mb-2 input-group input-group-icon input-rounded">
-                            <input type="password" id="password" class="form-control dz-password" placeholder="Type Password Here">
-                            <span class="input-group-text show-pass"> 
-                                <i class="icon feather icon-eye-off eye-close"></i>
-                                <i class="icon feather icon-eye eye-open"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Border Input</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-2 input-group input-group-icon input-mini">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-user"></i>
-                                </div>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Enter Username">								
-                        </div>
-                        <div class="mb-2 input-group input-group-icon input-mini">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-mail"></i>
-                                </div>
-                            </span>
-                            <input type="email" class="form-control" placeholder="Enter Email">
-                        </div>
-                        <div class="mb-2 input-group input-group-icon input-mini">
-                            <span class="input-group-text">
-                                <div class="input-icon">
-                                    <i class="icon feather icon-lock"></i>
-                                </div>
-                            </span>
-                            <input type="password" id="password" class="form-control dz-password" placeholder="Type Password Here">
-                            <span class="input-group-text show-pass"> 
-                                <i class="icon feather icon-eye-off eye-close"></i>
-                                <i class="icon feather icon-eye eye-open"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Range Slider</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="extra-padding mb-5">
-                            <div class="dz-range-slider">
-                                <div class="slider noUi-target noUi-ltr noUi-horizontal" id="slider-pips"><div class="noUi-base"><div class="noUi-connects"></div><div class="noUi-origin" style="transform: translate(-97.6555%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="2.3" aria-valuetext="2.34"></div></div></div><div class="noUi-pips noUi-pips-horizontal"><div class="noUi-marker noUi-marker-horizontal noUi-marker-large" style="left: 0%;"></div><div class="noUi-value noUi-value-horizontal noUi-value-large" data-value="0" style="left: 0%; cursor: pointer;">Small</div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 4.125%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 8.25%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 12.375%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 16.5%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 20.625%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 24.75%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 28.875%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-large" style="left: 33%;"></div><div class="noUi-value noUi-value-horizontal noUi-value-large" data-value="33" style="left: 33%; cursor: pointer;">Medium</div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 37.125%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 41.25%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 45.375%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 49.5%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 53.625%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 57.75%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 61.875%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-large" style="left: 66%;"></div><div class="noUi-value noUi-value-horizontal noUi-value-large" data-value="66" style="left: 66%; cursor: pointer;">Large</div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 69.7778%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 73.5556%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 77.3333%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 81.1111%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 84.8889%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 88.6667%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 92.4444%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-normal" style="left: 96.2222%;"></div><div class="noUi-marker noUi-marker-horizontal noUi-marker-large" style="left: 100%;"></div><div class="noUi-value noUi-value-horizontal noUi-value-large" data-value="100" style="left: 100%; cursor: pointer;">Extra Large</div></div></div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
