@@ -5,6 +5,8 @@ from flask import (
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+from sqlalchemy import func
+
 # Flask app setup
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
@@ -15,10 +17,30 @@ db = SQLAlchemy(app)
 # Models
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
+    title = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Integer)
+    image = db.Column(db.String)
+    categories = db.Column(db.String, nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
     ingredients = db.Column(db.Text, nullable=False)
     steps = db.Column(db.Text, nullable=False)
     is_favorite = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Category(db.Model):
+    __tablename__ = 'category'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    image = db.Column(db.String)
+    recipes = db.relationship('Recipe', backref='categories', lazy=True)
+    created_at = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    username = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    phone = db.Column(db.String(100), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 class OrderHistory(db.Model):
@@ -50,6 +72,10 @@ def user():
 @app.route('/order')
 def order():  
     return render_template('order.html')
+
+@app.route('/recipe')
+def recipe():  
+    return render_template('crud/save_recipe.html')
 
 
 if __name__ == '__main__':
