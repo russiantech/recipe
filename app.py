@@ -8,12 +8,16 @@ from functools import wraps
 
 # Flask app setup
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Models
+from flask_migrate import Migrate
+# After initializing `db`
+migrate = Migrate(app, db)
+
 # Models
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -76,7 +80,7 @@ def basket():
 def user():  
     return render_template('user.html')
 
-@app.route('/order')
+@app.route('/orders')
 def order():  
     return render_template('order.html')
 
@@ -84,23 +88,20 @@ def order():
 def products():  
     return render_template('products.html')
 
-@app.route('/recipe', methods=['POST'])
-def recipe():  
+# @app.route('/recipe', methods=['POST', 'GET'])
+# def recipe():  
 
-    data = request.form
-    new_recipe = Recipe(
-        name=data['title'], 
-                        ingredients=data['ingredients'], 
-                        steps=data['steps'])
-    db.session.add(new_recipe)
-    db.session.commit()
-    # return jsonify({"message": "Recipe added successfully!"})
+#     data = request.form
+#     new_recipe = Recipe(
+#         title=data['title'], ingredients=data['ingredients'], steps=data['steps'])
+#     db.session.add(new_recipe)
+#     db.session.commit()
+#     # return jsonify({"message": "Recipe added successfully!"})
         
-    return render_template('crud/save_recipe.html', message="Recipe added successfully!")
+#     return render_template('crud/save_recipe.html', message="Recipe added successfully!")
 
 
 # =================================================
-
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -121,7 +122,7 @@ def register():
         flash('Registration successful! Please log in.', 'success')
         return redirect(url_for('login'))
 
-    return render_template('register.html')
+    return render_template('crud/register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -138,7 +139,7 @@ def login():
 
         flash('Invalid username or password.', 'danger')
 
-    return render_template('login.html')
+    return render_template('crud/login.html')
 
 @app.route('/logout')
 def logout():
@@ -168,7 +169,7 @@ def new_recipe():
         return redirect(url_for('index'))
 
     categories = Category.query.all()
-    return render_template('new_recipe.html', categories=categories)
+    return render_template('crud/save_recipe.html', categories=categories)
 
 @app.route('/recipes/<int:id>')
 def view_recipe(id):
@@ -184,6 +185,6 @@ def delete_recipe(id):
     flash('Recipe deleted successfully!', 'success')
     return redirect(url_for('index'))
 
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
