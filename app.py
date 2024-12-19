@@ -68,9 +68,9 @@ def index():
     recipes = Recipe.query.all()
     return render_template('index.html', recipes=recipes)
 
-@app.route('/wish-list')
-def wish():  
-    return render_template('wish.html')
+@app.route('/saved')
+def saved():  
+    return render_template('saved.html')
 
 @app.route('/basket')
 def basket():  
@@ -88,23 +88,14 @@ def order():
 def products():  
     return render_template('products.html')
 
-# @app.route('/recipe', methods=['POST', 'GET'])
-# def recipe():  
-
-#     data = request.form
-#     new_recipe = Recipe(
-#         title=data['title'], ingredients=data['ingredients'], steps=data['steps'])
-#     db.session.add(new_recipe)
-#     db.session.commit()
-#     # return jsonify({"message": "Recipe added successfully!"})
-        
-#     return render_template('crud/save_recipe.html', message="Recipe added successfully!")
-
+@app.route('/notification')
+def notification():  
+    return render_template('incs/notification.html')
 
 # =================================================
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+@app.route('/sign-up', methods=['GET', 'POST'])
+def signup():
     if request.method == 'POST':
         name = request.form['name']
         username = request.form['username']
@@ -124,8 +115,8 @@ def register():
 
     return render_template('crud/register.html')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/sign-in', methods=['GET', 'POST'])
+def signin():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -139,10 +130,10 @@ def login():
 
         flash('Invalid username or password.', 'danger')
 
-    return render_template('crud/login.html')
+    return render_template('crud/signin.html')
 
-@app.route('/logout')
-def logout():
+@app.route('/sign-out')
+def signout():
     session.clear()
     flash('You have been logged out.', 'info')
     return redirect(url_for('login'))

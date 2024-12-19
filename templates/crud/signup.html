@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+
+{% block title %} Sign-up . Sewa-recipe {% endblock title %}
+
+{% block content %}
+<!-- Main Content Start -->
+<main class="page-content">
+    <div class="container py-0">
+        <div class="dz-authentication-area">
+            <div class="main-logo">
+                <a href="javascript:void(0);" class="back-btn">
+                    <i class="feather icon-arrow-left"></i>
+                </a>
+                <div class="logo">
+                    <img src="assets/images/app-logo/logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="section-head">
+                <h3 class="title">Create an account</h3>
+                <p>Hi, your-kitchen & good food is just an order away.</p>
+            </div>
+            <div class="account-section">
+                <form class="m-b20">
+                    <div class="mb-4">
+                        <label class="form-label" for="name">Username</label>
+                        <div class="input-group input-mini input-lg">
+                            <input type="name" id="name" class="form-control" value="williamsmith">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label" for="email">Email</label>
+                        <div class="input-group input-mini input-lg">
+                            <input type="email" name="email" id="email" class="form-control" value="info@examplegmail.com">
+                        </div>
+                    </div>
+                    <div class="m-b30">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-group input-mini input-lg">
+                            <input type="password" name="password" id="password" class="form-control dz-password" value="123456789">
+                            <span class="input-group-text show-pass"> 
+                                <i class="icon feather icon-eye-off eye-close"></i>
+                                <i class="icon feather icon-eye eye-open"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="btn btn-thin btn-lg w-100 btn-primary rounded-xl">Sign up</button> 
+                </form>
+                <div class="text-center">
+                    <p class="form-text">By tapping “Sign Up” you accept our <a href="javascript:void(0);" class="link">terms</a> and <a href="javascript:void(0);" class="link">condition</a></p>
+                </div>
+            </div>	
+        </div>
+    </div>
+</main>
+<!-- Main Content End -->
+{% endblock content %}

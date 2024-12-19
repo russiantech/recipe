@@ -1,0 +1,49 @@
+{% extends "base.html" %} 
+
+{% block title %}  {% endblock title %}
+
+{% block content %}
+<!-- Main Content Start -->
+<main class="page-content">
+    <div class="container py-0">
+        <div class="dz-authentication-area">
+            <div class="main-logo">
+                <div class="logo">
+                    <img src="static/images/app-logo/logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="section-head">
+                <h3 class="title">Sign In</h3>
+                <p>Your-kitchen is just an order away... Sewa-reccipe. </p>
+            </div>
+            <div class="account-section">
+                <form class="m-b30">
+                    <div class="mb-4">
+                        <label class="form-label" for="name">Username</label>
+                        <div class="input-group input-mini input-lg">
+                            <input type="name" name="username" id="name" class="form-control" value="chris-jsmes">
+                        </div>
+                    </div>
+                    <div class="m-b30">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-group input-mini input-lg">
+                            <input type="password" name="password" id="password" class="form-control dz-password" value="123456789">
+                            <span class="input-group-text show-pass"> 
+                                <i class="icon feather icon-eye-off eye-close"></i>
+                                <i class="icon feather icon-eye eye-open"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-thin btn-lg w-100 btn-primary rounded-xl mb-3">Login</a> 
+                    <p class="form-text">Forgot Password? <a href="forgot-password.html" class="link ms-2">Reset Password</a></p>
+                </form>
+                <div class="text-center account-footer">
+                    <p class="text-light">Dont have any account?</p>
+                    <a href="./sign-up" class="btn btn-secondary btn-lg btn-thin rounded-xl w-100">CREATE AN ACCOUNT</a>
+                </div>
+            </div>	
+        </div>
+    </div>
+</main>
+<!-- Main Content End -->
+{% endblock content %}
